@@ -9,14 +9,18 @@ public class OX {
             {"2" ,"-" ,"-" ,"-"} ,
     };
     private String player;
-    private int countX;
-    private int countO;
-    private int countDraw;
+    private int scoreX;
+    private int scoreO;
+    private int scoreDraw;
     private int turnCount;
 
     public OX(){
         player = "X";
         turnCount =0;
+        scoreX = 0;
+        scoreO = 0;
+        scoreDraw = 0;
+
     }
 
     public String getTableString() {
@@ -36,18 +40,18 @@ public class OX {
         return player;
     }
 
-    public int getCountO() {
-        return countO;
+    public int getscoreO() {
+        return scoreO;
     }
 
-    public int getCounrX() {
+    public int getscoreX() {
 
-        return countX;
+        return scoreX;
     }
 
-    public int getCountDraw() {
+    public int getscoreDraw() {
 
-        return countDraw;
+        return scoreDraw;
     }
 
 
@@ -151,5 +155,6 @@ public class OX {
         }
         return true;
     }
+
 
 }

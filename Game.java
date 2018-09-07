@@ -4,9 +4,9 @@ public class Game {
     private static OX ox;
     private static Scanner kb = new Scanner(System.in);
     private static int col,row;
-    static int countX = 0;
-    static int countO = 0;
-    static int countDraw = 0;
+    static int scoreX = 0;
+    static int scoreO = 0;
+    static int scoreDraw = 0;
 
     public static void input(){
         boolean canPut = true;
@@ -30,10 +30,10 @@ public class Game {
             if(ox.checkWin(col,row)){
                 printTable();
                 if(ox.getCurrentPlayer().equals("X")){
-                    countX = countX +1;
+                    scoreX = scoreX +1;
                     printScore();
                 }else if(ox.getCurrentPlayer().equals("O")){
-                    countO = countO+1;
+                    scoreO = scoreO+1;
                     printScore();
                 }
                 ox.reset();
@@ -41,7 +41,7 @@ public class Game {
             }
             if(ox.isDraw()){
                 printTable();
-                countDraw = countDraw + 1;
+                scoreDraw = scoreDraw + 1;
                 printScore();
                 ox.reset();
                 continue;
@@ -51,9 +51,9 @@ public class Game {
     }
 
     private static void printScore() {
-        System.out.println("X Win: " + countX);
-        System.out.println("O Win: " + countO);
-        System.out.println("Draw: " + countDraw);
+        System.out.println("X Win: " + scoreX);
+        System.out.println("O Win: " + scoreO);
+        System.out.println("Draw: " + scoreDraw);
     }
 
     private static void printTable() {
